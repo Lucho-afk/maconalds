@@ -20,8 +20,16 @@ public class HamburguesaModel {
 	
 	private String nombre;
 	private double precio;
+	private String img;
 	
 	
+	
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
+	}
 	public long getIdHamburguesa() {
 		return idHamburguesa;
 	}
