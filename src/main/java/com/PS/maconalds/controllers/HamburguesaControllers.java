@@ -3,6 +3,7 @@ package com.PS.maconalds.controllers;
 import java.util.ArrayList;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,6 +17,12 @@ import com.PS.maconalds.service.HamburguesaService;
 @RestController
 @RequestMapping("/hamburguesa")
 public class HamburguesaControllers {
+	
+	
+	@GetMapping(value="status")
+	public String checkStatus() {
+		return "ok";
+	}
 	
 	@Autowired
 	HamburguesaService hamburguesaService;
