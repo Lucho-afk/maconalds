@@ -30,4 +30,8 @@ public class HamburguesaService {
 		return hamburguesaRepository.findBynombre(nombre);
 	}
 	
+	public HamburguesaModel agregarHamburguesa (HamburguesaModel hamburguesaModel) {
+		return hamburguesaRepository.save(hamburguesaModel);
+	}
+	
 }
