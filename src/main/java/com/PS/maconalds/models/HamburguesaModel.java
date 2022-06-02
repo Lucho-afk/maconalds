@@ -7,8 +7,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 
 @Entity
+@CrossOrigin(origins = "*")
 @Table(name="hamburguesa")
 public class HamburguesaModel {
 

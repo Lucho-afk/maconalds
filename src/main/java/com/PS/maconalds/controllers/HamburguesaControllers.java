@@ -9,12 +9,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.PS.maconalds.models.HamburguesaModel;
 import com.PS.maconalds.service.HamburguesaService;
 
 @RestController
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE})
 @RequestMapping("/hamburguesa")
 public class HamburguesaControllers {
 	
@@ -37,7 +39,7 @@ public class HamburguesaControllers {
 		return hamburguesaService.TraerPorId(id);
 	}
 	
-	@GetMapping("/query")
+	@GetMapping("/query")//sacar query  nombre=big mac 
 	public	HamburguesaModel traerPorNombre(@RequestParam("nombre") String nombre) throws Exception {
 		if(hamburguesaService.traerPorNombre(nombre)==null) {
 			throw new Exception();
@@ -46,6 +48,7 @@ public class HamburguesaControllers {
 			return hamburguesaService.traerPorNombre(nombre);
 		}
 	}
+	
 	
 	@PostMapping()
 	public HamburguesaModel agregarHamburguesa (@RequestBody HamburguesaModel hamburguesa) {
